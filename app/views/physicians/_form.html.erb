@@ -20,6 +20,15 @@
     <%= form.label :specialty %>
     <%= form.text_field :specialty %>
   </div>
+  <h3>Office Locations</h3>
+  <div id="offices">
+      <%= form.fields_for :offices do |office| %>
+         <%= render 'office_fields', :f => office%>
+      <% end %>
+      <div class="links">
+          <%= link_to_add_association 'Add An Office', form, :offices %>
+      </div>
+  </div>
 
   <div class="actions">
     <%= form.submit %>

@@ -18,12 +18,12 @@
 
   <div class="field">
     <%= form.label :physician_id %>
-    <%= form.text_field :physician_id %>
+    <%= form.collection_select :physician_id, Physician.all, :id, :name %>
   </div>
 
   <div class="field">
     <%= form.label :patient_id %>
-    <%= form.text_field :patient_id %>
+    <%= form.collection_select :patient_id, Patient.all, :id, :name %>
   </div>
 
   <div class="actions">
