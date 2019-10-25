@@ -16,7 +16,8 @@
 
  /*PLEASE NOTE THE CSS WAS TAKEN DIRECTLY FROM PROFESSOR LANCASTERS HEROKU APP. PERMISSION WAS ASKED THROUGH EMAIL AND IT WAS APPROVED. 
  SOURCE OF CSS: https://glacial-retreat-64627.herokuapp.com/assets/application-c3ac4bde761ae169a62555d8445aef82200d4ebd4be863210255495dec1ff526.css*/
-body{background-color:#fff;color:#333;margin:33px;font-family:verdana, arial, helvetica, sans-serif;font-size:13px;line-height:18px}
+/*This is a test*/
+ body{background-color:#fff;color:#333;margin:33px;font-family:verdana, arial, helvetica, sans-serif;font-size:13px;line-height:18px}
 p,ol,ul,td{font-family:verdana, arial, helvetica, sans-serif;font-size:13px;line-height:18px}
 pre{background-color:#eee;padding:10px;font-size:11px}
 a{color:#000}
