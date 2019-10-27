@@ -1,24 +1,3 @@
-# README
+Homework #3 CIS 4339: Muhammad Nazir 1198085 
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
-
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+GRADER: PLEASE NOTE THE CSS WAS TAKEN DIRECTLY FROM PROFESSOR LANCASTERS HEROKU APP. PERMISSION WAS ASKED THROUGH EMAIL AND IT WAS APPROVED. 
