@@ -1,0 +1,37 @@
+<%= form_with(model: invoice, local: true) do |form| %>
+  <% if invoice.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(invoice.errors.count, "error") %> prohibited this invoice from being saved:</h2>
+
+      <ul>
+        <% invoice.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :invoice_number %>
+    <%= form.number_field :invoice_number %>
+  </div>
+
+  <div class="field">
+    <%= form.label :description %>
+    <%= form.text_field :description %>
+  </div>
+  <h3>Metal Items</h3>
+  <div id="metalitems">
+      <%= form.fields_for :metalitems do |metalitem| %>
+         <%= render 'metalitem_fields', :f => metalitem %>
+      <% end %>
+      <div class="links">
+          <%= link_to_add_association 'Add A Metal Item', form, :metalitems %>
+
+      </div>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

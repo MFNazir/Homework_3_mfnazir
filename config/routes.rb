@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+  resources :lineitems
+  resources :metalitems
+  resources :invoices
   resources :appointments
   resources :offices
   resources :patients

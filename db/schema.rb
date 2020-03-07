@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_10_25_021137) do
+ActiveRecord::Schema.define(version: 2020_03_06_211514) do
 
   create_table "appointments", force: :cascade do |t|
     t.datetime "visit"
@@ -20,6 +20,30 @@ ActiveRecord::Schema.define(version: 2019_10_25_021137) do
     t.datetime "updated_at", precision: 6, null: false
     t.index ["patient_id"], name: "index_appointments_on_patient_id"
     t.index ["physician_id"], name: "index_appointments_on_physician_id"
+  end
+
+  create_table "invoices", force: :cascade do |t|
+    t.integer "invoice_number"
+    t.string "description"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "lineitems", force: :cascade do |t|
+    t.integer "invoice_id", null: false
+    t.integer "metalitem_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["invoice_id"], name: "index_lineitems_on_invoice_id"
+    t.index ["metalitem_id"], name: "index_lineitems_on_metalitem_id"
+  end
+
+  create_table "metalitems", force: :cascade do |t|
+    t.string "description"
+    t.integer "quantity"
+    t.integer "unit_price"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
   end
 
   create_table "offices", force: :cascade do |t|
@@ -47,5 +71,7 @@ ActiveRecord::Schema.define(version: 2019_10_25_021137) do
 
   add_foreign_key "appointments", "patients"
   add_foreign_key "appointments", "physicians"
+  add_foreign_key "lineitems", "invoices"
+  add_foreign_key "lineitems", "metalitems"
   add_foreign_key "offices", "physicians"
 end
