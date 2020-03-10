@@ -15,5 +15,11 @@
   <%= @metalitem.unit_price %>
 </p>
 
+<p>
+  <strong>Unit Total:</strong>
+   <%= @metalitem.quantity * @metalitem.unit_price %>
+</p>
+ 
+
 <%= link_to 'Edit', edit_metalitem_path(@metalitem) %> |
 <%= link_to 'Back', metalitems_path %>

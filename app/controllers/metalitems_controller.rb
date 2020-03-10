@@ -5,6 +5,7 @@ class MetalitemsController < ApplicationController
   # GET /metalitems.json
   def index
     @metalitems = Metalitem.all
+   
   end
 
   # GET /metalitems/1
@@ -69,6 +70,6 @@ class MetalitemsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def metalitem_params
-      params.require(:metalitem).permit(:description, :quantity, :unit_price)
+      params.require(:metalitem).permit(:description, :quantity, :unit_price, :total)
     end
 end
