@@ -24,16 +24,23 @@
   </thead>
 
   <tbody>
+    <% running_total = 0 %>
     <% @invoice.metalitems.each do |metalitem| %>
       <tr>
         <td><%= metalitem.description %></td>
         <td><%= metalitem.quantity %></td>
         <td><%= metalitem.unit_price %></td>
         <td><%= metalitem.quantity * metalitem.unit_price %></td>
+        <% running_total = running_total + (metalitem.quantity * metalitem.unit_price) %>
       </tr>
     <% end %>
   </tbody>
 </table>
+
+<p>
+  <strong>Invoice Total:</strong>
+  <%= running_total %>
+</p>
 
 
 <%= link_to 'Edit', edit_invoice_path(@invoice) %> |
